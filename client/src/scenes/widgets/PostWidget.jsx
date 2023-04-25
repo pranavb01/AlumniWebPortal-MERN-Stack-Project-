@@ -43,7 +43,7 @@ const PostWidget = ({
   const [loadcomments, setLoadComments] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.SERVER_URL}/posts/${postId}/get/comment`,{ //axios.get(`${process.env.REACT_APP_SERVER_URL}/posts/${postId}/get/comment`, {
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/posts/${postId}/get/comment`, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ const PostWidget = ({
 
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, { //const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/posts/${postId}/like`, {
+    const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/posts/${postId}/like`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -76,7 +76,7 @@ const PostWidget = ({
   const postComment = async () => {
     try {
       const response = await axios.post(
-        `${process.env.SERVER_URL}/posts/${postId}/comment`,
+        `${process.env.REACT_APP_SERVER_URL}/posts/${postId}/comment`,
         {
           userId: loggedInUserId,
           postId: postId,
@@ -100,7 +100,7 @@ const PostWidget = ({
 
 
   const handleShare = () => {
-    const postUrl = `${process.env.SERVER_URL}/posts`;
+    const postUrl = `${process.env.REACT_APP_SERVER_URL}/posts`;
     navigator.clipboard.writeText(postUrl);
   };
 
