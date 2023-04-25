@@ -53,9 +53,9 @@ const AdvertWidget = () => {
     <WidgetWrapper>
       <FlexBetween>
         <Typography color={dark} variant='h5' fontWeight='500'>
-          Sponsored
+          Events
         </Typography>
-        <Typography color={medium}>Create Ad</Typography>
+        <Typography color={medium}>Official Events</Typography>
       </FlexBetween>
       <div style={{
         position: 'relative',
